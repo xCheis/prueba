@@ -1,0 +1,17 @@
+<button *ngIf="data.actions_strings.button_close" class="cancelar" (click)="cancelEvent(data.actions_strings.button_close.reply)" type="button">{{data.actions_strings.button_close.text}}</button>
+
+<div class="views-errors-wrapper" *ngIf="data.actions_strings.icon">
+    <img src='../../../assets/transmit/images/{{data.actions_strings.icon}}.svg' alt="">
+</div>
+<div class="title" *ngIf="data.actions_strings.text_title">
+    <h1>{{ data.actions_strings.text_title }}</h1>
+</div>
+<div class="detail" *ngIf="data.actions_strings.text_instruction">
+    <p [innerHTML]=" data.actions_strings.text_instruction | htmlTransmit"></p>
+</div>
+<div class="buttons" *ngIf="data.actions_strings.button_A">
+    <app-button [btnText]="data.actions_strings.button_A.text" (eventBtn)="goTo(data.actions_strings.button_A.reply)" ></app-button>
+</div>
+<div class="buttons" *ngIf="data.actions_strings.button_B">
+    <button class="red-button" (click)="cancelEvent(data.actions_strings.button_B.reply)">{{data.actions_strings.button_B.text}}</button>
+</div>

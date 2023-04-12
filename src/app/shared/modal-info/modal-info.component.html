@@ -1,0 +1,17 @@
+<button *ngIf="data.showClose" class="cancelar" (click)="close()" type="button">Cancelar</button>
+
+<div class="views-errors-wrapper" >
+    <img src='../../../assets/transmit/images/ic_alert.svg' alt="">
+</div>
+
+<div class="title" *ngIf="data.title">
+    <h1>{{ data.title }}</h1>
+</div>
+
+<div class="detail" *ngIf="data.text">
+    <p [innerHTML]="data.text | htmlTransmit"> </p>
+</div>
+
+<div class="buttons" *ngIf="data.continueText">
+    <app-button [btnText]="data.continueText" (eventBtn)="close()" ></app-button>
+</div>

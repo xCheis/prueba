@@ -1,0 +1,15 @@
+<div class="views-errors-wrapper">
+    <img src='../../../assets/errors/{{icon}}.svg' alt="">
+</div>
+    <div class="title">
+        <h1>{{ titulo }}</h1>
+    </div>
+    <div class="detail">
+        <p>{{ descripcion }}</p>
+    </div>
+
+    <div class="buttons">
+        <app-button *ngIf="buttonReintentar" [btnText]="'Reintentar'" (eventBtn)="goTo($event)" ></app-button>
+        <app-button *ngIf="buttonEntendido" [btnText]="'Entendido'" (eventBtn)="goTo($event)" ></app-button>
+        <p *ngIf="buttonCancelar"><span class="red">Cancelar</span></p>
+    </div>

@@ -1,0 +1,53 @@
+<div class="voucher-wrapper">
+    <div class="header-voucher">
+        <div class="col"><img src="../../../assets/images/voucher/logo.svg" alt=""></div>
+        <div class="col"> <p>Comprobante</p> </div>
+        <div class="col"><a [routerLink]="'/more-benefits'"> <img src="../../../assets/images/voucher/exit.svg" alt=""></a></div>
+    </div>
+
+    <div class="title-voucher">
+        <h1>¡Ahora recibirás mayores
+            productos y beneficios!</h1>
+        <div class="emoji"><img src="../../../assets/images/voucher/emoji.svg" alt=""></div>
+    </div>
+    
+    <div class="line"></div>
+
+    <div class="authorization">
+        <p>Has autorizado con éxito:</p>
+        <h3>Consulta a Buró de Crédito</h3>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="details-voucher">
+        <div class="row">
+            <span>Detalle de operación</span> <span>Consulta a Buró de Crédito</span>
+        </div>
+        <div class="row">
+            <span>Fecha y hora de operación</span> <span>{{date}}</span>
+        </div>
+        <div class="row">
+            <span>Ref. Santander Móvil</span> <span>93744616</span>
+        </div>
+    </div>
+</div>
+<div class="overflow">
+    <div class="sm-strok">
+        <div class="hide">
+            <div class="sawtoot" *ngFor="let i of numberSawtooth"></div>
+        </div>
+    </div>
+    <div class="bg-gray-wrapper">
+        <div class="icon-wrapper">
+            <div class="icon-button">
+                <div class="icon"><img src="../../../assets/images/voucher/share.svg" alt=""></div>
+                <p>Comparte el <br> comprobante</p>
+            </div>
+            <div class="icon-button">
+                <div class="icon"><img src="../../../assets/images/voucher/download.svg" alt=""></div>
+                <p>Guarda el <br> comprobante</p>
+            </div>
+        </div>
+    </div>
+</div>

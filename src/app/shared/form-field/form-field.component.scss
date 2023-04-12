@@ -1,0 +1,22 @@
+.form-field-wrapper {
+    border-radius: 8px;
+    border: 1px solid #D9D9D9;
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    .label-container {
+        padding-bottom: 5px;
+        width: 100%;
+        text-align: left;
+        flex: 1 100%;
+    }
+
+    .form-field-counter-wrapper {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+}

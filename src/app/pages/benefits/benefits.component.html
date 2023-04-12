@@ -1,0 +1,20 @@
+<app-header></app-header>
+
+<div class="container-benefits">
+    <div class="title">
+        <h1>Accede a más productos y obtén mayores beneficios</h1>
+        <p>
+            Queremos ofrecerte nuevos productos, mayores ofertas y beneficios. Solo necesitamos conocerte mejor 
+        </p>
+    </div>
+    <ul class="benefits-list">
+        <li *ngFor="let benefit of benefitList">
+            <img src="../../../assets/images/benefits/check.svg" alt="">
+            <p [innerHTML]="benefit"></p>
+        </li>
+    </ul>
+</div>
+
+<div class="button-container">
+    <app-button [btnText]="'Activar promociones'" (eventBtn)="goTo($event)" ></app-button>
+</div>

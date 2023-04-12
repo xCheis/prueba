@@ -1,0 +1,30 @@
+<div class="terms-wrapper">
+    <div class="header-container">
+        <div class="back-item" (click)="backTo()">
+            <img src="../../../assets/images/terms/back-item.svg" alt="">
+        </div>
+        <div class="download-item" (click)="downloadFile()">
+            <img src="../../../assets/images/terms/download-item.svg" alt="">
+        </div>
+    </div>
+    
+    <div class="container-terms">
+        <div class="title">
+            <h1>Autorización de consulta a las sociedades de información crediticia.</h1>
+        </div>
+        <p>
+          {{termsText}}
+        </p>
+    </div>
+    
+    <div class="footer-container">
+     <label for="terms">
+         <input autocomplete="off" class="checkbox-round" id="terms" type="checkbox" (change)="checkTerms = !checkTerms">
+         Confirmo que he leído, conozco y acepto esta autorización.
+     </label>
+     <div class="button-container" *ngIf="checkTerms">
+        <app-button [btnText]="'Continuar'" (eventBtn)="goTo($event)" ></app-button>
+     </div>
+    </div>
+
+</div>

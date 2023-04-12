@@ -1,0 +1,31 @@
+<div class="welcome-header" *ngIf="templateText.icon">
+    <img src="../../../assets/transmit/images/{{templateText.icon}}.svg" alt="">
+</div>
+<div class="title-container" *ngIf="templateText.text_title">
+    <h1>{{templateText.text_title}}</h1>
+</div>
+<div class="info-container">
+    <p *ngIf="templateText.text_subtitle">{{templateText.text_subtitle}}</p>
+    <p *ngIf="templateText.text_instruction" [innerHTML]="templateText.text_instruction | htmlTransmit"> </p>
+</div>
+<div class="button-container" *ngIf="templateText.button_A && !templateText.input_A">
+    <app-button [btnText]="templateText.button_A.text" (eventBtn)="ContinueEvent(templateText.button_A.reply)"></app-button>
+</div>
+<div class="input-container" *ngIf="templateText.input_A">
+    <label for="codeId"></label>
+    <input  type="password" id="codeId" placeholder="********" [(ngModel)]="key" class="password" [maxlength]="templateText.input_A.max_length">
+    <app-button *ngIf="templateText.button_A" [btnText]="templateText.button_A.text" [validation]="{disabled:key.length < templateText.input_A.max_length}" (eventBtn)="ContinueEvent(key)"></app-button>
+</div>
+<div class="alert-container" *ngIf="templateText.text_footer">
+    <p *ngIf="!templateText.otp_expiry" [innerHTML]="templateText.text_footer | htmlTransmit   ">  </p>
+    <p *ngIf="templateText.otp_expiry" [innerHTML]="templateText.text_footer | htmlTransmit | extractValue: (templateText.otp_expiry | formatTime)  ">  </p>
+</div>
+<div class="button-container" *ngIf="templateText.button_B && !templateText.button_B.action">
+    <button  class="red-button" (click)="CancelEvent(templateText.button_B.reply)">{{templateText.button_B.text}}</button>
+</div>
+<div class="button-container" *ngIf="templateText.button_B && templateText.button_B.action">
+    <button  [disabled]="!activeResend" class="red-button" (click)="ResendEvent()">{{templateText.button_B.text}}</button>
+</div>
+<div class="alert-container" *ngIf="templateText.helper_text">
+    <p [innerHTML]="templateText.helper_text | htmlTransmit">  </p>
+</div>

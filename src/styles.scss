@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: #404040;
+    input {
+        border: 0;
+        &:hover {
+            border: 0;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #404040;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+
+    &.dark-backdrop {
+
+        background: #333;
+
+        opacity: 0.7 !important;
+
+    }
+
+    &.loader-backdrop {
+
+        opacity: 0.7;
+
+        background-color: #333;
+
+    }
+
+    &.my-custom-backdrop-class {
+
+        opacity: 0.7;
+
+        background-color:  #ec0000;
+
+    }
+
+}
+
+
+.mat-radio-button.mat-accent.mat-radio-checked  .mat-radio-outer-circle {
+    display: none;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle{
+    display: none;
+}
+
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element {
+    display: none;
+}

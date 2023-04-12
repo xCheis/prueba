@@ -1,0 +1,46 @@
+<div class="header-container">
+    <img src="../../../../assets/images/header/Santander-mini.svg" alt="" class="image">
+    <button *ngIf="templateText.button_close" class="cancelar" type="button"
+        (click)="CancelEvent(templateText.button_close.reply)">
+        {{templateText.button_close.text}}
+    </button>
+</div>
+<div class="transmit-title-container" *ngIf="templateText.text_title">
+    <h1>{{templateText.text_title}}</h1>
+</div>
+<div class="transmit-container">
+    <div class="sub-container">
+        <br>
+        <br>
+        <strong *ngIf="templateText.text_instruction">{{templateText.text_instruction}}</strong>
+        <div class="otp-methods" *ngIf="templateText.menu_items">
+            <div class="radio-container">
+                <div class="otp-container" *ngFor="let item of templateText.menu_items; let i = index"
+                    (click)="selectedOtpMethod(item.name, i)">
+                    <div class="select-otp">
+                        <p> <img src="../../../../assets/transmit/images/{{item.image}}.svg" alt=""> {{item.auth_desc}}
+                        </p>
+                        <img *ngIf="otpMethod == item.name" src="../../../../assets/transmit/images/ready.svg" alt="">
+                    </div>
+                    <mat-divider></mat-divider>
+                </div>
+            </div>
+        </div>
+        <div class="text-info-container">
+            <p *ngIf="textInfo" [innerHTML]="textInfo.desc"></p>
+            <p *ngIf="textInfo"> <strong> {{textInfo.masked_target}}</strong> </p>
+        </div>
+        <div class="buttons-container">
+            <div class="button-container" *ngIf="templateText.button_A">
+                <app-button [validation]="{disabled: otpMethod == null}" [btnText]="templateText.button_A.text"
+                    (eventBtn)="ContinueEvent(otpMethod)"></app-button>
+            </div>
+            <div class="button-container" *ngIf="templateText.button_B && textInfo">
+                <button class="red-button"
+                    (click)="CancelEvent(templateText.button_B.reply)">{{textInfo.not_my_data}}</button>
+            </div>
+        </div>
+
+
+    </div>
+</div>

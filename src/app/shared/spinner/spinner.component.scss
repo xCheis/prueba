@@ -1,0 +1,408 @@
+/* ----- LOADER ----- */
+#loader,
+#loader-i {
+	bottom: 0;
+	height: 220px;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 290px;
+}
+
+.organic {
+	bottom: 0;
+	filter: url(#organic);
+	height: 220px;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 290px;
+}
+
+.loader-logo {
+	height: 22px;
+	left: 50%;
+	width: 22px;
+	margin-left: -11px;
+	margin-top: -12px;
+	position: absolute;
+	top: 50%;
+	z-index: 200;
+	fill: #ffffff;
+}
+
+.dot {
+	height: 0;
+	left: 50%;
+	position: absolute;
+	top: 50%;
+	width: 0;
+}
+.dot:before {
+	background: var(--sn-color__santander, #ec0000);
+	border-radius: 50px;
+	content: '';
+	height: 22px;
+	left: 50%;
+	margin-left: -11px;
+	margin-top: -11px;
+	position: absolute;
+	transform: translateY(0) rotate(0deg);
+	width: 22px;
+}
+@keyframes dot-move {
+	0% {
+		transform: translateY(0);
+	}
+	18%,
+	22% {
+		transform: translateY(-45px);
+	}
+	40%,
+	100% {
+		transform: translateY(0);
+	}
+}
+.dot:nth-child(5):before {
+	z-index: 100;
+	width: 43px;
+	height: 43px;
+	margin-left: -21.5px;
+	margin-top: -21.5px;
+	animation: dot-colors 5s ease infinite;
+}
+@keyframes dot-rotate-1 {
+	0% {
+		transform: rotate(-105deg);
+	}
+	100% {
+		transform: rotate(270deg);
+	}
+}
+.dot:nth-child(1) {
+	animation: dot-rotate-1 5s 0s linear infinite;
+}
+.dot:nth-child(1):before {
+	animation: dot-move 5s 0s ease infinite;
+}
+@keyframes dot-rotate-2 {
+	0% {
+		transform: rotate(165deg);
+	}
+	100% {
+		transform: rotate(540deg);
+	}
+}
+.dot:nth-child(2) {
+	animation: dot-rotate-2 5s 1.25s linear infinite;
+}
+.dot:nth-child(2):before {
+	animation: dot-move 5s 1.25s ease infinite;
+}
+@keyframes dot-rotate-3 {
+	0% {
+		transform: rotate(435deg);
+	}
+	100% {
+		transform: rotate(810deg);
+	}
+}
+.dot:nth-child(3) {
+	animation: dot-rotate-3 5s 2.5s linear infinite;
+}
+.dot:nth-child(3):before {
+	animation: dot-move 5s 2.5s ease infinite;
+}
+@keyframes dot-rotate-4 {
+	0% {
+		transform: rotate(705deg);
+	}
+	100% {
+		transform: rotate(1080deg);
+	}
+}
+.dot:nth-child(4) {
+	animation: dot-rotate-4 5s 3.75s linear infinite;
+}
+.dot:nth-child(4):before {
+	animation: dot-move 5s 3.75s ease infinite;
+}
+
+/* ----- ADD TO LOADER-i ----- */
+.invert .loader-logo {
+	fill: var(--sn-color__santander, #ec0000);
+}
+.invert .dot:before {
+	background-color: #ffffff;
+}
+
+/* ----- SMALL LOADER ----- */
+.bubbles {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100px;
+	height: 100px;
+	border-radius: 100%;
+	margin: auto;
+	filter: url(#organic);
+	animation: bubbles-rotate ease-in-out 1s infinite;
+}
+
+@keyframes bubbles-rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(360deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+.bubble {
+	background: var(--sn-color__santander, #ec0000);
+	width: 12px;
+	height: 12px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -6px;
+	margin-left: -6px;
+	border-radius: 100%;
+}
+
+@keyframes bubble-anim-left {
+	0% {
+		transform: translateX(0px) scale(1.06);
+	}
+	25% {
+		transform: translateX(0px) scale(1.06);
+	}
+	100% {
+		transform: translateX(-24px) scale(1);
+	}
+}
+.bubble:first-child {
+	animation: bubble-anim-left ease-in-out 1s infinite alternate;
+}
+
+@keyframes bubble-anim-right {
+	0% {
+		transform: translateX(0px) scale(1.06);
+	}
+	25% {
+		transform: translateX(0px) scale(1.06);
+	}
+	100% {
+		transform: translateX(24px) scale(1);
+	}
+}
+.bubble:last-child {
+	animation: bubble-anim-right ease-in-out 1s infinite alternate;
+}
+
+/* ----- ADD TO SMALL LOADER-i ----- */
+.invert .bubble {
+	background-color: #ffffff;
+}
+
+$swift-ease-in-out-duration: 500ms !default;
+$pi: 3.14159265;
+
+$progress-spinner-default-radius: 45px;
+$progress-spinner-default-circumference: $pi * $progress-spinner-default-radius *
+	2;
+
+$start: (1 - 0.05) * $progress-spinner-default-circumference; // start the animation at 5%
+$end: (1 - 0.8) * $progress-spinner-default-circumference; // end the animation at 80%
+$ease-in-out-curve-function: cubic-bezier(0.35, 0, 0.25, 1) !default;
+
+$progress-spinner-stroke-rotate-fallback-duration: 10 * 1000ms !default;
+$progress-spinner-stroke-rotate-fallback-ease: cubic-bezier(
+	0.87,
+	0.03,
+	0.33,
+	1
+) !default;
+
+@mixin _noop-animation() {
+	@at-root .animation-noopable#{&} {
+		transition: none;
+		animation: none;
+		@content;
+	}
+}
+
+.circle {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	margin: auto;
+	filter: url(#organic);
+	animation: spinner-rotate ease-in-out 1s infinite;
+	svg {
+		fill: transparent;
+		circle {
+			stroke: var(--sn-color__santander, #ec0000);
+			@include _noop-animation();
+			fill: transparent;
+			transform-origin: center;
+			transition: stroke-dashoffset 225ms linear;
+		}
+	}
+	&.progress-spinner-indeterminate-animation {
+		@include _noop-animation();
+		animation: progress-spinner-linear-rotate $swift-ease-in-out-duration * 4
+			linear infinite;
+
+		circle {
+			@include _noop-animation();
+			transition-property: stroke;
+			animation-duration: $swift-ease-in-out-duration * 8;
+			animation-timing-function: $ease-in-out-curve-function;
+			animation-iteration-count: infinite;
+		}
+	}
+
+	&.progress-spinner-indeterminate-fallback-animation[mode='indeterminate'] {
+		@include _noop-animation();
+		animation: progress-spinner-stroke-rotate-fallback
+			$progress-spinner-stroke-rotate-fallback-duration
+			$progress-spinner-stroke-rotate-fallback-ease infinite;
+
+		circle {
+			@include _noop-animation();
+			transition-property: stroke;
+		}
+	}
+}
+.invert {
+	.circle {
+		svg {
+			circle {
+				stroke: #ffffff;
+			}
+		}
+	}
+}
+
+@keyframes progress-spinner-linear-rotate {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@at-root {
+	$start: (1 - 0.05) * $progress-spinner-default-circumference; // start the animation at 5%
+	$end: (1 - 0.8) * $progress-spinner-default-circumference; // end the animation at 80%
+	$fallback-iterations: 4;
+
+	@keyframes progress-spinner-stroke-rotate-100 {
+		0% {
+			stroke-dashoffset: $start;
+			transform: rotate(0);
+		}
+		12.5% {
+			stroke-dashoffset: $end;
+			transform: rotate(0);
+		}
+		12.5001% {
+			stroke-dashoffset: $end;
+			transform: rotateX(180deg) rotate(72.5deg);
+		}
+		25% {
+			stroke-dashoffset: $start;
+			transform: rotateX(180deg) rotate(72.5deg);
+		}
+
+		25.0001% {
+			stroke-dashoffset: $start;
+			transform: rotate(270deg);
+		}
+		37.5% {
+			stroke-dashoffset: $end;
+			transform: rotate(270deg);
+		}
+		37.5001% {
+			stroke-dashoffset: $end;
+			transform: rotateX(180deg) rotate(161.5deg);
+		}
+		50% {
+			stroke-dashoffset: $start;
+			transform: rotateX(180deg) rotate(161.5deg);
+		}
+
+		50.0001% {
+			stroke-dashoffset: $start;
+			transform: rotate(180deg);
+		}
+		62.5% {
+			stroke-dashoffset: $end;
+			transform: rotate(180deg);
+		}
+		62.5001% {
+			stroke-dashoffset: $end;
+			transform: rotateX(180deg) rotate(251.5deg);
+		}
+		75% {
+			stroke-dashoffset: $start;
+			transform: rotateX(180deg) rotate(251.5deg);
+		}
+
+		75.0001% {
+			stroke-dashoffset: $start;
+			transform: rotate(90deg);
+		}
+		87.5% {
+			stroke-dashoffset: $end;
+			transform: rotate(90deg);
+		}
+		87.5001% {
+			stroke-dashoffset: $end;
+			transform: rotateX(180deg) rotate(341.5deg);
+		}
+		100% {
+			stroke-dashoffset: $start;
+			transform: rotateX(180deg) rotate(341.5deg);
+		}
+		// stylelint-enable
+	}
+
+	@keyframes progress-spinner-stroke-rotate-fallback {
+		@for $i from 0 through $fallback-iterations {
+			$percent: 100 / $fallback-iterations * $i;
+			$offset: 360 / $fallback-iterations;
+			#{$percent}% { // NOSONAR
+				transform: rotate(#{$i * (360 * 3 + $offset)}deg); // NOSONAR
+			} // NOSONAR
+		}
+	}
+}
+
+
+//test styles
+
+.circle-class{
+	animation-name: progress-spinner-stroke-rotate-100; 
+	stroke-dasharray: 282.743px;
+	 stroke-width: 10%;
+}
+
+.svg-class{
+	width: 30px; height: 30px;
+}

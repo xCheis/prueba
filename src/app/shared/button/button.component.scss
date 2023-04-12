@@ -1,0 +1,19 @@
+.button-red {
+    background-color: #ec0000;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 100px;
+    border-width: 0;
+    appearance: none;
+    padding: 15px 30px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 1s;
+    &.disabled {
+        background-color: #E5E5E5;
+        color: gray;
+
+    }
+}
+

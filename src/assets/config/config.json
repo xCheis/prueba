@@ -1,0 +1,16 @@
+{
+  "production": true,
+  "fad": "https://fad.gateway.mx.api.gateway.pre.mx.corp",
+  "consultaBuro": {
+    "checkBuro" : "http://localhost:8100/consulta_buro/check_buro",
+    "validateBuro":"http://localhost:8100/consulta_buro/check_status",
+    "secretKey": "MIIEowIBAAKCAQEAtHef4MzJdLrq0f3PR00spmQ/jwzq6GdkghRCtPlQUxdAtLKS2LjISvgj1t67Tq8Oq7qfMNshGtV1eVktV4FMlfzo0VPCXXr0E8DYZNYUD0Bw9DNU9Etk4dhmj3Q8oBrP5wfkKgUZMb7BEYLAEkgIdRdgi49dgcSvWD3TJYGErrqCmQML1hv5M/ReQ/xXFntpyHqmIUdlBYFkIOB4FLOn55hPg4j6+bbyk+iIKJ1kilOeSjoLIdfUJu3oV9hI8/eph4BUKnsiRtpWiGS7GIik/6X3ytBxH0eNjy7nD8WQMVUSfF4sBbJ5M++6ijcmwx9S2rhFDfbU5+1+PmYXriMobQIDAQABAoIBAQCxt2PQIpr4wuFfrcwjcRJZQTt+CcCC4N6PYphWU3YQfUORLpGBrmY/vaC9hlV6JNYTsxH1MLWnETJAL9uA4qmiwo4bJZqwJ9aYZT4z/sV+R310XeB5Oo28AjjtaBATspOt9Y1w+9hVrn2+Wr3+wsThWgYPKT1x/1iVUzzNIICi9wzhO7YcC+OzsA19JPwB28YGfNHMuTROzfkmihYZ2SCq21LdaPfVwjD41gZCvEZAWbuRY/06s/VYuKxiJk6Dkuoo9zPG8A2tqOTbmYqIyMoyZIoeAu+6+rq+fDTCFbl6Sgou8JuBGmqPuIysb1UUgzlU8OKrZ5R1yGxY7Lut77iZAoGBAN9zNaqiF42aKbpsUgW2qYOIBXm9ul21Lp8LygoXY56Tm6zD39x2Mmbz0akA7bq4jQuuYYyElLQXFEg5lyQX0nQggoU/ookeR8/Mslpo1CZJ8ekkg5+BFAmeGB0tRqcHU2Xzths1D33L23yXqm99fhPFbET5L2LumCue7NSf0RjHAoGBAM7BhdsHL6ZhXObbuawUltYdSTa6UENkh0G+j+DO/jvpMlRZSjM7kAGS4F2RvpcF37CbrEOQXal20wtbfzQhzVUWozDouHtWm2rgm+DW+kXAeU8dDrvXZAFAYvmmajTjMhrdzTUqo+91XOrftUHN1/aMW/CcLQgjYFdy8JGPswkrAoGAfHKZ7RKhs4esvdseQ3hcKJlVE1yLsyz5bjMOr1gfb24eQbZFs29Q2u3oUwvlWxz10Q+p3KzqdPJ1pVQNzVhHKc4BY1zxlRR8Qktq+ddwcHK2fHaNqAQnuMOIApf4xYXa+Okm/zgqDJHBCD8f+UAXO8O0bSWrMppXvdOhazonJnkCgYBz+Gi0alt337TUaPrEYugYQWUHpYnPw1t6rQDXAEPqJutsFIliI06rE092LIHTBCBsV2VQoHFo1JWcET5QZ4Vc7M2saVzREcsrL8E/ZFYNOeDRV2MkSbR2Xz8k+QspjyZTm4W3BKvfbN0pgUGSH3u7dw867t7zaaRoaLg3bXrm8QKBgCAzn0vxpSQWpf3B1gb3VteFoI7RnKUlYXhLEP5+VU796qXvPfCrL2n2KEpE80kWG2oKVOdz/T3Oq/dFm4cn7/tsJzxa3VPXBAwdB/kodbqwchUnOy7ApCDstezQ05fOVKKSIrJdMXrVHr+KCaWs2klOVxaj5pvItRwRYa8auOz0"
+  },
+  "transmit": {
+    "serverUrl": "https://auth-control-mx-secmgmt-iam-cust-dev.apps.str01.mex.dev.mx1.paas.cloudcenter.corp",
+    "appId": "web_universal",
+    "clientId": "M5HQ4M0ZUSim-3rL8dhMD49ucjWotvZf5rpU3fAANno",
+    "journeyName": "credit_report_authorization"
+  }
+
+}

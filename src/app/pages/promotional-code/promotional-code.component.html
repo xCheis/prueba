@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="promo-code-container">
+    <h2>
+        Ingresa tu código promocional y número de cliente
+    </h2>
+
+</div>
+
+
+<div class="input-container" >
+    <app-form-field [label]="'Código promocional'" [codeLength]="code.length" >
+        <label for="promeCode"></label>
+        <input  id="promeCode" type="text" maxlength="17" autocomplete="off" [(ngModel)]="code" (ngModelChange)="code = code.toUpperCase()">
+    </app-form-field>
+</div>
+
+<div class="button-container">
+    <app-button [btnText]="'Continuar'" [validation]="{disabled: (code.length < 17 ? true : false)}" (eventBtn)="goTo($event)"></app-button>
+</div>
+<div class="text-info">
+    <p>“Insertar aquí el texto <br>
+        del uso de Datos”</p>
+</div>

@@ -1,0 +1,48 @@
+:host {
+	display: block;
+	background-color: transparent;
+}
+
+:host ::ng-deep .invert .loader-logo {
+	fill: black;
+}
+
+:host ::ng-deep #loader {
+	position: relative !important;
+	height: 120px !important;
+}
+
+section {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	.message {
+		width: 216px;
+		height: 48px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: auto;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		font-size: 20px;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: 1.2;
+		letter-spacing: normal;
+		text-align: center;
+		color: #ffffff;
+		h3 {
+			font-weight: 500;
+			margin-bottom: 5px;
+		}
+		p{
+			margin: 0;
+		}
+	}
+}
